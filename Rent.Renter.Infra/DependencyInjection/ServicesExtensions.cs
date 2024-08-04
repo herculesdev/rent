@@ -1,9 +1,12 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
 using Rent.Renter.Core.Data;
 using Rent.Renter.Core.Entities;
+using Rent.Renter.Infra.Data.Contexts;
 using Rent.Renter.Infra.Data.Repositories;
+using Rent.Renter.Infra.Data.Storage;
 
 namespace Rent.Renter.Infra.DependencyInjection;
 
@@ -21,11 +24,15 @@ public static class ServicesExtensions
 
         if (isWorker)
         {
+            services.AddDbContext<RenterContext>(opts => { opts.UseNpgsql(config.GetConnectionString("MainConnection")); }, ServiceLifetime.Transient);
             services.AddTransient<IMotorbikeRepository, MotorbikeNoSqlRepository>();
         }
         else
         {
+            services.AddDbContext<RenterContext>(opts => { opts.UseNpgsql(config.GetConnectionString("MainConnection")); });
             services.AddScoped<IMotorbikeRepository, MotorbikeNoSqlRepository>();
         }
+
+        services.AddSingleton<IFileStorage, DiskFileStorage>();
     }
 }

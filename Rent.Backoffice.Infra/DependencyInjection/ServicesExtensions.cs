@@ -1,14 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Rent.Backoffice.Core.Data;
 using Rent.Backoffice.Core.Entities;
 using Rent.Backoffice.Infra.Data.Contexts;
 using Rent.Backoffice.Infra.Data.Repositories;
 
-namespace Rent.Backoffice.Api.DependecyInjection;
+namespace Rent.Backoffice.Infra.DependencyInjection;
 
 public static class ServicesExtensions
 {
-    public static void ConfigureModuleAll(this IServiceCollection services, ConfigurationManager config)
+    public static void ConfigureBackofficeModule(this IServiceCollection services, ConfigurationManager config)
     {
         services.AddMediatR(cfg =>
         {

@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rent.Renter.MotorbikeUpdate
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rent.Backoffice.Tests", "Rent.Backoffice.Tests\Rent.Backoffice.Tests.csproj", "{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rent.Renter.Tests", "Rent.Renter.Tests\Rent.Renter.Tests.csproj", "{BBFF288D-8F0A-45BD-8C9F-814C7E872DCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBFF288D-8F0A-45BD-8C9F-814C7E872DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFF288D-8F0A-45BD-8C9F-814C7E872DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFF288D-8F0A-45BD-8C9F-814C7E872DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFF288D-8F0A-45BD-8C9F-814C7E872DCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +89,6 @@ Global
 		{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB} = {55EE3BBD-67C7-4811-AEB8-6027C4B3FF7F}
 		{8DEB86EC-91FE-412E-B912-34E7BB760573} = {D2333762-50C8-4C02-A81D-59EB0C769994}
 		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25} = {CD6187FA-DBFE-42B5-86BD-E707F40810F6}
+		{BBFF288D-8F0A-45BD-8C9F-814C7E872DCA} = {D2333762-50C8-4C02-A81D-59EB0C769994}
 	EndGlobalSection
 EndGlobal

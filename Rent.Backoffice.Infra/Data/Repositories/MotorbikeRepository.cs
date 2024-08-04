@@ -24,7 +24,8 @@ public class MotorbikeRepository(BackofficeContext db) : IMotorbikeRepository
         var query = db.Set<Motorbike>()
             .Where(x => string.IsNullOrEmpty(filters.SearchString) ||
                         EF.Functions.Like(x.LicensePlate, $"{filters.SearchString}%") ||
-                        EF.Functions.Like(x.ModelName, $"{filters.SearchString}%"));
+                        EF.Functions.Like(x.ModelName, $"{filters.SearchString}%"))
+            .AsNoTracking();
 
         var totalCount = await query.CountAsync(cancellationToken);
         var motorbikes = await query.Skip(filters.GetSkip())
@@ -53,6 +54,6 @@ public class MotorbikeRepository(BackofficeContext db) : IMotorbikeRepository
     public async Task Delete(Motorbike motorbike, CancellationToken cancellationToken = default)
     {
         db.Remove(motorbike);
-      await   db.SaveChangesAsync(cancellationToken);
+        await db.SaveChangesAsync(cancellationToken);
     }
 }

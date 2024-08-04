@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Rent.Shared.Library.Entities;
 
-namespace Rent.Backoffice.Infra.Data.Contexts;
+namespace Rent.Renter.Infra.Data.Contexts;
 
-public sealed class BackofficeContext : DbContext
+public sealed class RenterContext : DbContext
 {
-    public BackofficeContext(DbContextOptions<BackofficeContext> options):base(options)
+    public RenterContext(DbContextOptions<RenterContext> options):base(options)
     {
         Database.Migrate();
     }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(BackofficeContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(RenterContext).Assembly);
         base.OnModelCreating(modelBuilder);
     }
     
