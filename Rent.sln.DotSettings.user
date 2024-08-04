@@ -1,0 +1,27 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7d3717d9_002D9f8b_002D4c0d_002Db2cc_002De932914f366a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Validate_ShouldBeInvalidWhenManufactureYearIsLessThanFirstMotorcycleManufactureYear" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Create.CreateMotorbikeCommandValidatorTests&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Create.CreateMotorbikeCommandHandlerTests.Handle_ShouldReturnInvalid_WhenCommandIsInvalid&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Create.CreateMotorbikeCommandHandlerTests.Handle_ShouldFail_LicensePlateAlreadyExistsInTheDatabase&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Create.CreateMotorbikeCommandHandlerTests.Handle_ShouldSucceed&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Delete.DeleteMotorbikeCommandHandlerTests.Handle_ShouldFail_WhenMotorbikeDoesNotExists&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Delete.DeleteMotorbikeCommandHandlerTests.Handle_ShouldSucceed&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.GetById.GetMotorbikeByIdQueryHandlerTests.Handle_ShouldFail_WhenMotorbikeDoesNotExists&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.GetById.GetMotorbikeByIdQueryHandlerTests.Handle_ShouldSucceed&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.GetPaged.GetMotorbikesPagedQueryHandlerTests.Handle_ShouldSucceed&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandHandlerTests.Handle_ShouldFail_WhenCommandIsInvalid&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandHandlerTests.Handle_ShouldFail_LicensePlateAlreadyExistsInTheDatabase&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandHandlerTests.Handle_ShouldFail_WhenMotorbikeDoesNotExist&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandHandlerTests.Handle_ShouldSucceed&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandValidatorTests.Validate_ShouldBeInvalid_WhenIdIsEmpty&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandValidatorTests.Validate_ShouldBeInvalid_WhenManufactureYearIsLessThanFirstMotorcycleManufactureYear&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandValidatorTests.Validate_ShouldBeInvalid_WhenModelNameIsEmpty&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandValidatorTests.Validate_ShouldBeValid_WhenAllFieldsAreValid&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandValidatorTests.Validate_ShouldBeInvalid_WhenLicensePlateIsEmpty&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::F34DEAB9-EC36-422A-9081-F5EFF3E6AA25::net8.0::Rent.Backoffice.Tests.Core.Features.Update.UpdateMotorbikeCommandValidatorTests.Validate_ShouldBeInvalid_WhenIsNotValidBrazilianLicensePlate&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFile&gt;F34DEAB9-EC36-422A-9081-F5EFF3E6AA25/d:Core/d:Features/d:Create/f:CreateMotorbikeCommandHandlerTests.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

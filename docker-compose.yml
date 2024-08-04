@@ -1,0 +1,44 @@
+networks:
+  rentnet:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: rentdbpass
+      POSTGRES_USER: rentdbuser
+    ports:
+      - 5433:5432
+    #volumes:
+      #- ~/rent/postgresql/data:/var/lib/postgresql/data
+    networks:
+      - rentnet
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: rentmquser
+      RABBITMQ_DEFAULT_PASS: rentmqpass
+    ports:
+        - 5672:5672
+        - 15672:15672
+    #volumes:
+        #- ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        #- ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+        - rentnet
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongouser
+      - MONGO_INITDB_ROOT_PASSWORD=mongopass
+    ports:
+      - 27017:27017
+    networks:
+      - rentnet

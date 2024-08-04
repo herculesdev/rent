@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Renter", "Renter", "{D2333762-50C8-4C02-A81D-59EB0C769994}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backoffice", "Backoffice", "{CD6187FA-DBFE-42B5-86BD-E707F40810F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Backoffice.Api", "Rent.Backoffice.Api\Rent.Backoffice.Api.csproj", "{34DF91FE-7E6F-4C1C-AD7C-AA23F89ED7DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Renter.Api", "Rent.Renter.Api\Rent.Renter.Api.csproj", "{AAA4DC9C-6FF0-436D-8805-0300E154F380}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Backoffice.Core", "Rent.Backoffice.Core\Rent.Backoffice.Core.csproj", "{2FFBCB7D-BE63-4D80-95CE-831C68F88221}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Renter.Core", "Rent.Renter.Core\Rent.Renter.Core.csproj", "{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Backoffice.Infra", "Rent.Backoffice.Infra\Rent.Backoffice.Infra.csproj", "{D83E8F15-2025-405A-AE5E-A944B9F48462}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Renter.Infra", "Rent.Renter.Infra\Rent.Renter.Infra.csproj", "{38CBE919-0EAF-4C91-BC19-7BF727C2EDC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{55EE3BBD-67C7-4811-AEB8-6027C4B3FF7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rent.Shared.Library", "Rent.Shared.Library\Rent.Shared.Library.csproj", "{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rent.Renter.MotorbikeUpdatesMonitor.Consumer", "Rent.Renter.MotorbikeUpdatesMonitor.Consumer\Rent.Renter.MotorbikeUpdatesMonitor.Consumer.csproj", "{8DEB86EC-91FE-412E-B912-34E7BB760573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rent.Backoffice.Tests", "Rent.Backoffice.Tests\Rent.Backoffice.Tests.csproj", "{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34DF91FE-7E6F-4C1C-AD7C-AA23F89ED7DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DF91FE-7E6F-4C1C-AD7C-AA23F89ED7DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DF91FE-7E6F-4C1C-AD7C-AA23F89ED7DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DF91FE-7E6F-4C1C-AD7C-AA23F89ED7DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA4DC9C-6FF0-436D-8805-0300E154F380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA4DC9C-6FF0-436D-8805-0300E154F380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA4DC9C-6FF0-436D-8805-0300E154F380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA4DC9C-6FF0-436D-8805-0300E154F380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFBCB7D-BE63-4D80-95CE-831C68F88221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFBCB7D-BE63-4D80-95CE-831C68F88221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFBCB7D-BE63-4D80-95CE-831C68F88221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFBCB7D-BE63-4D80-95CE-831C68F88221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D83E8F15-2025-405A-AE5E-A944B9F48462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D83E8F15-2025-405A-AE5E-A944B9F48462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D83E8F15-2025-405A-AE5E-A944B9F48462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D83E8F15-2025-405A-AE5E-A944B9F48462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38CBE919-0EAF-4C91-BC19-7BF727C2EDC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38CBE919-0EAF-4C91-BC19-7BF727C2EDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38CBE919-0EAF-4C91-BC19-7BF727C2EDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38CBE919-0EAF-4C91-BC19-7BF727C2EDC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DEB86EC-91FE-412E-B912-34E7BB760573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DEB86EC-91FE-412E-B912-34E7BB760573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DEB86EC-91FE-412E-B912-34E7BB760573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DEB86EC-91FE-412E-B912-34E7BB760573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{34DF91FE-7E6F-4C1C-AD7C-AA23F89ED7DE} = {CD6187FA-DBFE-42B5-86BD-E707F40810F6}
+		{AAA4DC9C-6FF0-436D-8805-0300E154F380} = {D2333762-50C8-4C02-A81D-59EB0C769994}
+		{2FFBCB7D-BE63-4D80-95CE-831C68F88221} = {CD6187FA-DBFE-42B5-86BD-E707F40810F6}
+		{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB} = {D2333762-50C8-4C02-A81D-59EB0C769994}
+		{D83E8F15-2025-405A-AE5E-A944B9F48462} = {CD6187FA-DBFE-42B5-86BD-E707F40810F6}
+		{38CBE919-0EAF-4C91-BC19-7BF727C2EDC5} = {D2333762-50C8-4C02-A81D-59EB0C769994}
+		{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB} = {55EE3BBD-67C7-4811-AEB8-6027C4B3FF7F}
+		{8DEB86EC-91FE-412E-B912-34E7BB760573} = {D2333762-50C8-4C02-A81D-59EB0C769994}
+		{F34DEAB9-EC36-422A-9081-F5EFF3E6AA25} = {CD6187FA-DBFE-42B5-86BD-E707F40810F6}
+	EndGlobalSection
+EndGlobal
