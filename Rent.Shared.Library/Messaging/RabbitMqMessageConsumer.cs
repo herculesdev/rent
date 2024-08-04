@@ -29,7 +29,8 @@ public class RabbitMqMessageConsumer : IMessageConsumer
         var connection = _factory.CreateConnection();
         var channel = connection.CreateModel();
         var queueDeclareArgs = new Dictionary<string, object> { { "x-queue-type", "stream" } };
-        var queueConsumeArgs = new Dictionary<string, object> { { "x-stream-offset", lastProcessedOffset ?? "first" } };
+        object nextOffset = lastProcessedOffset != null ? ((long)lastProcessedOffset) + 1 : "first";
+        var queueConsumeArgs = new Dictionary<string, object> { { "x-stream-offset",  nextOffset} };
         
         channel.QueueDeclare(queueOrStreamName, durable: true, exclusive: false, autoDelete: false, arguments: queueDeclareArgs);
         channel.BasicQos(0, 100, false);

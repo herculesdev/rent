@@ -38,7 +38,7 @@ public class CreateDeliveryPersonCommandHandler(IDeliveryPersonRepository delive
         deliveryPerson.DriverLicenseNumber = command.DriverLicenseNumber;
         deliveryPerson.DriverLicenseType = command.DriverLicenseType;
         deliveryPerson.DriverLicenseImageName = driverLicenseImageFileName;
-        deliveryPerson.BirthDate = command.BirthDate;
+        deliveryPerson.BirthDate = DateOnly.FromDateTime(command.BirthDate);
         await deliveryPersonRepository.Add(deliveryPerson, cancellationToken);
         
         logger.LogInformation("Building response and returning");

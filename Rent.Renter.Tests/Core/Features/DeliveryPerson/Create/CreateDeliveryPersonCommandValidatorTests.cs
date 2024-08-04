@@ -5,7 +5,7 @@ namespace Rent.Renter.Tests.Core.Features.DeliveryPerson.Create;
 public class CreateDeliveryPersonCommandValidatorTests
 {
     private readonly CreateDeliveryPersonCommandValidator _validator = new();
-    private readonly CreateDeliveryPersonCommand _createDeliveryPersonCommandSample = new("Hércules", "16599855000110", "42997067713", "AB", DateOnly.Parse("1997-03-22"), Consts.Base64BmpCnh);
+    private readonly CreateDeliveryPersonCommand _createDeliveryPersonCommandSample = new("Hércules", "16599855000110", "42997067713", "AB", DateTime.Parse("1997-03-22"), Consts.Base64BmpCnh);
     
     [Theory]
     [InlineData("    ")]

@@ -54,7 +54,7 @@ public class MotorbikeController(ISender sender) : Controller
         return CreatedAtAction(nameof(GetById), new {id = result.Data!.Id}, result.Data);
     }
     
-    [HttpPatch]
+    [HttpPut]
     [ProducesResponseType(typeof(MotorbikeResponse), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     public async Task<IActionResult> Update(UpdateMotorbikeCommand command)

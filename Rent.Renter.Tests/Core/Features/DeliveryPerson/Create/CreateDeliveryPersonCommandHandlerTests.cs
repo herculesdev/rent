@@ -11,7 +11,7 @@ public class CreateDeliveryPersonCommandHandlerTests
     private readonly IDeliveryPersonRepository _deliveryPersonRepository = Substitute.For<IDeliveryPersonRepository>();
     private readonly IFileStorage _fileStorage = Substitute.For<IFileStorage>();
     private readonly ILogger<CreateDeliveryPersonCommandHandler> _logger = Substitute.For<ILogger<CreateDeliveryPersonCommandHandler>>();
-    private readonly CreateDeliveryPersonCommand _createDeliveryPersonCommandSample = new("Hércules", "16599855000110", "42997067713", "AB", DateOnly.Parse("1997-03-22"), Consts.Base64BmpCnh);
+    private readonly CreateDeliveryPersonCommand _createDeliveryPersonCommandSample = new("Hércules", "16599855000110", "42997067713", "AB", DateTime.Parse("1997-03-22"), Consts.Base64BmpCnh);
     private readonly CreateDeliveryPersonCommandHandler _createDeliveryPersonCommandHandler;
     
     public CreateDeliveryPersonCommandHandlerTests()

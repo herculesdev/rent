@@ -16,7 +16,6 @@ public static class ServicesExtensions
     {
         services.AddMediatR(cfg =>
         {
-            cfg.RegisterServicesFromAssembly(typeof(ServicesExtensions).Assembly);
             cfg.RegisterServicesFromAssembly(typeof(Motorbike).Assembly);
         });
         
@@ -26,11 +25,13 @@ public static class ServicesExtensions
         {
             services.AddDbContext<RenterContext>(opts => { opts.UseNpgsql(config.GetConnectionString("MainConnection")); }, ServiceLifetime.Transient);
             services.AddTransient<IMotorbikeRepository, MotorbikeNoSqlRepository>();
+            services.AddTransient<IDeliveryPersonRepository, DeliveryPersonRepository>();
         }
         else
         {
             services.AddDbContext<RenterContext>(opts => { opts.UseNpgsql(config.GetConnectionString("MainConnection")); });
             services.AddScoped<IMotorbikeRepository, MotorbikeNoSqlRepository>();
+            services.AddScoped<IDeliveryPersonRepository, DeliveryPersonRepository>();
         }
 
         services.AddSingleton<IFileStorage, DiskFileStorage>();
