@@ -10,7 +10,7 @@ namespace Rent.Backoffice.Infra.DependencyInjection;
 
 public static class ServicesExtensions
 {
-    public static void ConfigureBackofficeModule(this IServiceCollection services, ConfigurationManager config)
+    public static void ConfigureBackofficeModule(this IServiceCollection services, IConfigurationManager config)
     {
         services.AddMediatR(cfg =>
         {

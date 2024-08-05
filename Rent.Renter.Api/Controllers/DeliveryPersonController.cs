@@ -2,7 +2,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Rent.Renter.Core.Features.DeliveryPerson.Create;
+using Rent.Renter.Core.Features.DeliveryPerson.GetById;
 using Rent.Renter.Core.Features.DeliveryPerson.Shared;
+using Rent.Renter.Core.Features.DeliveryPerson.Update;
 
 namespace Rent.Renter.Api.Controllers;
 
@@ -11,10 +13,14 @@ namespace Rent.Renter.Api.Controllers;
 public class DeliveryPersonController(ISender sender) : Controller
 {
     [HttpGet("{id:guid}")]
-    public async Task<IActionResult> Get(Guid id)
+    public async Task<IActionResult> GetById(Guid id)
     {
-        await Task.Delay(10);
-        return Ok("Not implemented yet");
+        var result = await sender.Send(new GetDeliveryPersonByIdQuery(id));
+
+        if (result.IsFailure)
+            return NotFound(result.Errors);
+
+        return Ok(result.Data);
     }
     
     [HttpPost]
@@ -27,19 +33,19 @@ public class DeliveryPersonController(ISender sender) : Controller
         if (result.IsFailure)
             return BadRequest(result.Errors);
         
-        return CreatedAtAction(nameof(Get), new{ Id = result.Data!.Id }, result.Data);
+        return CreatedAtAction(nameof(GetById), new{ result.Data!.Id }, result.Data);
     }
     
-    /*[HttpPatch]
-    [ProducesResponseType(typeof(MotorbikeResponse), (int)HttpStatusCode.OK)]
+    [HttpPut]
+    [ProducesResponseType(typeof(DeliveryPersonResponse), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<IActionResult> Update(UpdateMotorbikeCommand command)
+    public async Task<IActionResult> Update(UpdateDeliveryPersonCommand command)
     {
         var result = await sender.Send(command);
 
         if (result.IsFailure)
             return BadRequest(result.Errors);
-        
+
         return Ok(result.Data);
-    }*/
+    }
 }

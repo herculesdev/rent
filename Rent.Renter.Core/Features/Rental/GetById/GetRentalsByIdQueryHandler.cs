@@ -8,7 +8,7 @@ namespace Rent.Renter.Core.Features.Rental.GetById;
 
 public class GetRentalByIdQueryHandler(IRentalRepository rentalRepository, ILogger<GetRentalByIdQueryHandler> logger) : IRequestHandler<GetRentalByIdQuery, Result<RentalResponse>>
 {
-    public async Task<Result<RentalResponse>> Handle(GetRentalByIdQuery query, CancellationToken cancellationToken)
+    public async Task<Result<RentalResponse>> Handle(GetRentalByIdQuery query, CancellationToken cancellationToken = default)
     {
         var rental = await rentalRepository.GetById(query.Id, cancellationToken);
         if (rental is null)

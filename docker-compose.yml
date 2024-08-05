@@ -24,8 +24,8 @@ services:
       RABBITMQ_DEFAULT_USER: rentmquser
       RABBITMQ_DEFAULT_PASS: rentmqpass
     ports:
-        - 5672:5672
-        - 15672:15672
+        - 5673:5672
+        - 15673:15672
     #volumes:
         #- ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         #- ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
@@ -39,6 +39,6 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=mongouser
       - MONGO_INITDB_ROOT_PASSWORD=mongopass
     ports:
-      - 27017:27017
+      - 27018:27017
     networks:
       - rentnet
