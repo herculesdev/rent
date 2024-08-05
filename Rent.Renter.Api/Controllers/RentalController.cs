@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Rent.Renter.Core.Entities;
 using Rent.Renter.Core.Features.Rental.Create;
 using Rent.Renter.Core.Features.Rental.GetById;
 using Rent.Renter.Core.Features.Rental.GetTotalization;
@@ -46,5 +47,11 @@ public class RentalController(ISender sender) : Controller
             return BadRequest(result.Errors);
         
         return CreatedAtAction(nameof(GetById), new{ id = result.Data!.Id }, result.Data);
+    }
+    
+    [HttpGet("available-plans")]
+    public IActionResult GetAvailablePlans()
+    {
+        return Ok(Plan.AvailablePlans);
     }
 }

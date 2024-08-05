@@ -12,7 +12,7 @@ namespace Rent.Renter.Infra.DependencyInjection;
 
 public static class ServicesExtensions
 {
-    public static void ConfigureRenterModule(this IServiceCollection services, ConfigurationManager config, bool isWorker = false)
+    public static void ConfigureRenterModule(this IServiceCollection services, IConfigurationManager config, bool isWorker = false)
     {
         services.AddMediatR(cfg =>
         {
