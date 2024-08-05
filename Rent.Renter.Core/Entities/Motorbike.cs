@@ -1,7 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-
-namespace Rent.Renter.Core.Entities;
+﻿namespace Rent.Renter.Core.Entities;
 
 public class Motorbike
 {
@@ -9,4 +6,5 @@ public class Motorbike
     public int ManufactureYear { get; set; }
     public string ModelName { get; set; } = string.Empty;
     public string LicensePlate { get; set; } = string.Empty;
+    public bool IsRented { get; set; }
 }

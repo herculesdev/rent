@@ -27,7 +27,7 @@ public class CreateDeliveryPersonCommandHandler(IDeliveryPersonRepository delive
         
         logger.LogInformation("Decoding image saving into file storage");
         var driverLicenseImageBytes = Convert.FromBase64String(command.Base64DriverLicenseImage);
-        var driverLicenseImageExtension = GetFileExtensionFromBytes(driverLicenseImageBytes);
+        var driverLicenseImageExtension = driverLicenseImageBytes.GetFileExtensionFromBytes();
         var driverLicenseImageFileName = $"{Guid.NewGuid()}.{driverLicenseImageExtension}";
         fileStorage.Save(driverLicenseImageFileName, driverLicenseImageBytes);
         
@@ -45,15 +45,5 @@ public class CreateDeliveryPersonCommandHandler(IDeliveryPersonRepository delive
         var response = DeliveryPersonResponse.From(deliveryPerson);
         
         return Result.Success(response);
-    }
-
-    private string GetFileExtensionFromBytes(byte[] fileBytes)
-    {
-        if (fileBytes.StartsWith(FileMagicNumberConsts.Jpeg))
-            return "jpg";
-        if (fileBytes.StartsWith(FileMagicNumberConsts.Bmp))
-            return "bmp";
-
-        return "unknown";
     }
 }

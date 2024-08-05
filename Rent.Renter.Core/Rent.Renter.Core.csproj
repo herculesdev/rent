@@ -15,8 +15,4 @@
       <ProjectReference Include="..\Rent.Shared.Library\Rent.Shared.Library.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Features\DeliveryPerson\Update\" />
-    </ItemGroup>
-
 </Project>

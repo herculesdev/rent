@@ -1,4 +1,6 @@
-﻿namespace Rent.Shared.Library.Extensions;
+﻿using Rent.Shared.Library.Consts;
+
+namespace Rent.Shared.Library.Extensions;
 
 public static class ByteArrayExtensions
 {
@@ -14,5 +16,15 @@ public static class ByteArrayExtensions
         }
 
         return true;
+    }
+    
+    public static string GetFileExtensionFromBytes(this byte[] fileBytes)
+    {
+        if (fileBytes.StartsWith(FileMagicNumberConsts.Jpeg))
+            return "jpg";
+        if (fileBytes.StartsWith(FileMagicNumberConsts.Bmp))
+            return "bmp";
+
+        return "unknown";
     }
 }

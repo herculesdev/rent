@@ -26,12 +26,14 @@ public static class ServicesExtensions
             services.AddDbContext<RenterContext>(opts => { opts.UseNpgsql(config.GetConnectionString("MainConnection")); }, ServiceLifetime.Transient);
             services.AddTransient<IMotorbikeRepository, MotorbikeNoSqlRepository>();
             services.AddTransient<IDeliveryPersonRepository, DeliveryPersonRepository>();
+            services.AddTransient<IRentalRepository, RentalRepository>();
         }
         else
         {
             services.AddDbContext<RenterContext>(opts => { opts.UseNpgsql(config.GetConnectionString("MainConnection")); });
             services.AddScoped<IMotorbikeRepository, MotorbikeNoSqlRepository>();
             services.AddScoped<IDeliveryPersonRepository, DeliveryPersonRepository>();
+            services.AddScoped<IRentalRepository, RentalRepository>();
         }
 
         services.AddSingleton<IFileStorage, DiskFileStorage>();
