@@ -18,12 +18,6 @@ public class RentalController(ISender sender) : Controller
     public async Task<IActionResult> GetById(Guid id)
     {
         return (await sender.Send(new GetRentalByIdQuery(id))).OkOrNotFound();
-        /*var result = await sender.Send(new GetRentalByIdQuery(id));
-
-        if (result.IsFailure)
-            return NotFound(result.Errors);
-
-        return Ok(result.Data);*/
     }
     
     [HttpGet("{id:guid}/totalization")]
@@ -31,12 +25,6 @@ public class RentalController(ISender sender) : Controller
     {
         DateOnly? date = returnDate != null ? DateOnly.FromDateTime(returnDate.Value) : null;
         return (await sender.Send(new GetRentalTotalizationQuery(id, date))).OkOrNotFound();
-        /*var result = await sender.Send(new GetRentalTotalizationQuery(id, date));
-
-        if (result.IsFailure)
-            return NotFound(result.Errors);
-        
-        return Ok(result.Data);*/
     }
     
     [HttpPost]
@@ -45,12 +33,6 @@ public class RentalController(ISender sender) : Controller
     public async Task<IActionResult> Create(CreateRentalCommand command)
     {
         return (await sender.Send(command)).CreatedOrBadRequest();
-        /*var result = await sender.Send(command);
-
-        if (result.IsFailure)
-            return BadRequest(result.Errors);
-
-        return CreatedAtAction(nameof(GetById), new{ id = result.Data!.Id }, result.Data);*/
     }
     
     [HttpGet("available-plans")]

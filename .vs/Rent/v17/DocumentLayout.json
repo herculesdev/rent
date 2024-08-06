@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB}|Rent.Renter.Core\\Rent.Renter.Core.csproj|solutionrelative:rent.renter.core\\features\\rental\\create\\createrentalcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB}|Rent.Renter.Core\\Rent.Renter.Core.csproj|c:\\users\\hercu\\riderprojects\\rent\\rent.renter.core\\entities\\rental.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79C8ED54-AEBE-4E15-AF8D-DE3C1834E5EB}|Rent.Renter.Core\\Rent.Renter.Core.csproj|solutionrelative:rent.renter.core\\entities\\rental.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB}|Rent.Shared.Library\\Rent.Shared.Library.csproj|c:\\users\\hercu\\riderprojects\\rent\\rent.shared.library\\extensions\\validatorextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB30E81-48C7-42B0-82E7-E08D77DEA2CB}|Rent.Shared.Library\\Rent.Shared.Library.csproj|solutionrelative:rent.shared.library\\extensions\\validatorextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Rental.cs",
-              "DocumentMoniker": "C:\\Users\\hercu\\RiderProjects\\Rent\\Rent.Renter.Core\\Entities\\Rental.cs",
-              "RelativeDocumentMoniker": "Rent.Renter.Core\\Entities\\Rental.cs",
-              "ToolTip": "C:\\Users\\hercu\\RiderProjects\\Rent\\Rent.Renter.Core\\Entities\\Rental.cs",
-              "RelativeToolTip": "Rent.Renter.Core\\Entities\\Rental.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA3wBcAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T01:10:57.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CreateRentalCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\hercu\\RiderProjects\\Rent\\Rent.Renter.Core\\Features\\Rental\\Create\\CreateRentalCommandHandler.cs",
               "RelativeDocumentMoniker": "Rent.Renter.Core\\Features\\Rental\\Create\\CreateRentalCommandHandler.cs",
               "ToolTip": "C:\\Users\\hercu\\RiderProjects\\Rent\\Rent.Renter.Core\\Features\\Rental\\Create\\CreateRentalCommandHandler.cs",
               "RelativeToolTip": "Rent.Renter.Core\\Features\\Rental\\Create\\CreateRentalCommandHandler.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACYAAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T01:08:52.428Z",
+              "WhenOpened": "2024-08-06T19:29:07.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ValidatorExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\hercu\\RiderProjects\\Rent\\Rent.Shared.Library\\Extensions\\ValidatorExtensions.cs",
+              "RelativeDocumentMoniker": "Rent.Shared.Library\\Extensions\\ValidatorExtensions.cs",
+              "ToolTip": "C:\\Users\\hercu\\RiderProjects\\Rent\\Rent.Shared.Library\\Extensions\\ValidatorExtensions.cs",
+              "RelativeToolTip": "Rent.Shared.Library\\Extensions\\ValidatorExtensions.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAADwv4wAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T19:25:23.056Z",
               "EditorCaption": ""
             }
           ]

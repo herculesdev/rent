@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using NSubstitute;
-using NSubstitute.ReturnsExtensions;
 using Rent.Backoffice.Core.Data;
 using Rent.Backoffice.Core.Entities;
 using Rent.Backoffice.Core.Features.Motorbike.GetPaged;

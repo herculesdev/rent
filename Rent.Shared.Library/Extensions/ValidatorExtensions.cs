@@ -1,5 +1,4 @@
-﻿using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using FluentValidation;
 using Rent.Shared.Library.Consts;
 
@@ -130,14 +129,14 @@ public static class ValidatorExtensions
             sum += int.Parse(driverLicenseNumberWithoutVerifierDigits[i].ToString()) * firstDigitMultipliers[i];
 
         var rest = sum % 11;
-        var firstDigit = rest == 10 ? 0 : rest;
+        var secondDigit = rest == 10 ? 0 : rest;
         
         sum = 0;
         for (var i = 0; i < 9; i++)
             sum += int.Parse(driverLicenseNumberWithoutVerifierDigits[i].ToString()) * secondDigitMultipliers[i];
 
         rest = sum % 11;
-        var secondDigit = rest == 10 ? 0 : rest;
+        var firstDigit = rest == 10 ? 0 : rest;
 
         var verifierDigits = firstDigit.ToString() + secondDigit.ToString();
 

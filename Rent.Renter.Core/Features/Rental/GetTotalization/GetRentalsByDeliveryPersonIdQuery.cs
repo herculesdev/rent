@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Rent.Renter.Core.Features.Rental.Shared;
 using Rent.Renter.Core.ValueObjects;
 using Rent.Shared.Library.Results;
 

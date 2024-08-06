@@ -1,6 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Rent.Shared.Library.Messaging;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Rent.Shared.Library.Extensions;
 

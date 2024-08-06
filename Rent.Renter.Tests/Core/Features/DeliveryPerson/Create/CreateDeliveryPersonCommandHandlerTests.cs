@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using NSubstitute;
-using NSubstitute.ReceivedExtensions;
 using Rent.Renter.Core.Data;
 using Rent.Renter.Core.Features.DeliveryPerson.Create;
 
@@ -51,7 +50,7 @@ public class CreateDeliveryPersonCommandHandlerTests
     [Fact]
     public async Task Handle_ShouldFail_WhenDriverLicenseNumberAlreadyExists()
     {
-        var existentDriverLicenseNumber = "34199190106";
+        var existentDriverLicenseNumber = "86300239337";
         var command = _createDeliveryPersonCommandSample with { DriverLicenseNumber = existentDriverLicenseNumber};
         var expectedErrorCount = 1;
         var expectedErrorMessage = "Driver license number already exists";

@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Logging;
 using Rent.Renter.Core.Data;
 using Rent.Renter.Core.Features.DeliveryPerson.Shared;
-using Rent.Shared.Library.Consts;
 using Rent.Shared.Library.Extensions;
 using Rent.Shared.Library.Results;
 

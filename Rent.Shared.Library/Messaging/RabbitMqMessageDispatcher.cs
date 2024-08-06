@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Text;
+using System.Text.Json;
 using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 
@@ -35,7 +36,7 @@ public class RabbitMqMessageDispatcher : IMessageDispatcher
         
         channel.QueueDeclare(queueOrStreamName, durable: true, exclusive: false, autoDelete: false, arguments: queueDeclareArgs);
         
-        var messageBodyBytes = System.Text.Encoding.UTF8.GetBytes(JsonSerializer.Serialize(message));
+        var messageBodyBytes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(message));
         channel.BasicPublish(exchange: "", queueOrStreamName, null, messageBodyBytes);
         
         channel.Close();

@@ -68,5 +68,6 @@
       &lt;TestId&gt;xUnit::BBFF288D-8F0A-45BD-8C9F-814C7E872DCA::net8.0::Rent.Renter.Tests.Core.Features.DeliveryPerson.Update.UpdateDeliveryPersonCommandValidatorTests.Validate_ShouldBeInvalid_WhenDriverLicenseNumberIsNotValid&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;ProjectFile&gt;F34DEAB9-EC36-422A-9081-F5EFF3E6AA25/d:Core/d:Features/d:Create/f:CreateMotorbikeCommandHandlerTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFolder&gt;BBFF288D-8F0A-45BD-8C9F-814C7E872DCA/d:Core&lt;/ProjectFolder&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
