@@ -12,6 +12,11 @@ public static class ValidatorExtensions
         return ruleBuilder.Must(IsBrazilianLicensePlate);
     }
     
+    public static IRuleBuilderOptions<T, TElement> IsBrazilianValidDriverLicenseNumber<T, TElement>(this IRuleBuilder<T, TElement> ruleBuilder)
+    {
+        return ruleBuilder.Must(IsBrazilianValidDriverLicenseNumber);
+    }
+    
     public static IRuleBuilderOptions<T, TElement> IsCnpj<T, TElement>(this IRuleBuilder<T, TElement> ruleBuilder)
     {
         return ruleBuilder.Must(IsCnpj);
@@ -101,6 +106,42 @@ public static class ValidatorExtensions
         return valueStr[12] == firstVerifierDigit.ToString()[0] &&
                valueStr[13] == secondVerifierDigit.ToString()[0];
         
+    }
+
+    private static bool IsBrazilianValidDriverLicenseNumber<TElement>(TElement value)
+    {
+        var driverLicenseNumber = value?.ToString();
+        if (string.IsNullOrWhiteSpace(driverLicenseNumber))
+            return false;
+        
+        if (driverLicenseNumber.Length != 11 || !long.TryParse(driverLicenseNumber, out _))
+            return false;
+        
+        if (driverLicenseNumber.Distinct().Count() == 1)
+            return false;
+
+        int[] firstDigitMultipliers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        int[] secondDigitMultipliers = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+        var driverLicenseNumberWithoutVerifierDigits = driverLicenseNumber[..9];
+        
+        var sum = 0;
+        for (var i = 0; i < 9; i++)
+            sum += int.Parse(driverLicenseNumberWithoutVerifierDigits[i].ToString()) * firstDigitMultipliers[i];
+
+        var rest = sum % 11;
+        var firstDigit = rest == 10 ? 0 : rest;
+        
+        sum = 0;
+        for (var i = 0; i < 9; i++)
+            sum += int.Parse(driverLicenseNumberWithoutVerifierDigits[i].ToString()) * secondDigitMultipliers[i];
+
+        rest = sum % 11;
+        var secondDigit = rest == 10 ? 0 : rest;
+
+        var verifierDigits = firstDigit.ToString() + secondDigit.ToString();
+
+        return driverLicenseNumber.EndsWith(verifierDigits);
     }
 
     private static bool IsBase64ValidJpegOrBmp<TElement>(TElement value)

@@ -10,10 +10,12 @@ public class GetRentalByIdQueryHandler(IRentalRepository rentalRepository, ILogg
 {
     public async Task<Result<RentalResponse>> Handle(GetRentalByIdQuery query, CancellationToken cancellationToken = default)
     {
+        logger.LogInformation("Retrieving");
         var rental = await rentalRepository.GetById(query.Id, cancellationToken);
         if (rental is null)
             return Result.Failure("Rental not found");
         
+        logger.LogInformation("Building response and returning");
         return Result.Success(RentalResponse.From(rental));
     }
 }

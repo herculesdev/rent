@@ -26,6 +26,13 @@ public class CreateDeliveryPersonCommandValidator : AbstractValidator<CreateDeli
             .NotEmpty()
             .WithMessage("Driver License Number is required");
         
+        When(x => !string.IsNullOrWhiteSpace(x.DriverLicenseNumber), () =>
+        {
+            RuleFor(x => x.DriverLicenseNumber)
+                .IsBrazilianValidDriverLicenseNumber()
+                .WithMessage("Driver License Number isn't valid");
+        });
+        
         RuleFor(x => x.DriverLicenseType)
             .NotEmpty()
             .WithMessage("Driver License Type is required");

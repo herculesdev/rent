@@ -8,7 +8,7 @@ namespace Rent.Renter.Core.Events.MotorbikeUpdated;
 
 public class MotorbikeUpdatedEventHandler(IMotorbikeRepository motorbikeRepository, ILogger<MotorbikeUpdatedEventHandler> logger) : IRequestHandler<MotorbikeUpdatedEvent, Result>
 {
-    public async Task<Result> Handle(MotorbikeUpdatedEvent evt, CancellationToken cancellationToken)
+    public async Task<Result> Handle(MotorbikeUpdatedEvent evt, CancellationToken cancellationToken = default)
     {
         logger.LogInformation("Detecting update type");
         switch (evt.UpdateType)
@@ -19,19 +19,19 @@ public class MotorbikeUpdatedEventHandler(IMotorbikeRepository motorbikeReposito
                 logger.LogInformation("Retrieving from repository");
                 var motorbike = await motorbikeRepository.GetById(evt.Id, cancellationToken);
                 if (motorbike is null)
-                    return Result.Failure("Can't delete non existent motorbike");
+                    return Result.Failure("Motorbike not found");
                 
                 logger.LogInformation("Deleting");
                 await motorbikeRepository.Delete(motorbike, cancellationToken);
                 return Result.Success();
             }
-            case MotorbikeUpdateType.Updated or MotorbikeUpdateType.Deleted:
+            case MotorbikeUpdateType.Updated:
             {
                 logger.LogInformation("Detected: Update");
                 logger.LogInformation("Retrieving from repository");
                 var motorbike = await motorbikeRepository.GetById(evt.Id, cancellationToken);
                 if (motorbike is null)
-                    return Result.Failure("Can't update non existent motorbike");
+                    return Result.Failure("Motorbike not found");
                 
                 logger.LogInformation("Updating fields");
                 motorbike.LicensePlate = evt.LicensePlate;
@@ -46,8 +46,6 @@ public class MotorbikeUpdatedEventHandler(IMotorbikeRepository motorbikeReposito
             {
                 logger.LogInformation("Detected: Creation");
                 logger.LogInformation("Building entity");
-                if(evt.ManufactureYear == 2024)
-                    logger.LogInformation("Notifying: Motorbike {plate} is from {year}!", evt.LicensePlate, evt.ManufactureYear);
                 
                 var motorbike = new Motorbike();
                 motorbike.Id = evt.Id;
@@ -57,6 +55,13 @@ public class MotorbikeUpdatedEventHandler(IMotorbikeRepository motorbikeReposito
                 
                 logger.LogInformation("Saving into repository");
                 await motorbikeRepository.Add(motorbike, cancellationToken);
+
+                if (evt.ManufactureYear == 2024)
+                {
+                    logger.LogInformation("Notifying: Motorbike {plate} is from {year}!", evt.LicensePlate, evt.ManufactureYear);
+                    await motorbikeRepository.AddInto2024Collection(motorbike, cancellationToken);
+                }
+
                 return Result.Success();
             }
             default:

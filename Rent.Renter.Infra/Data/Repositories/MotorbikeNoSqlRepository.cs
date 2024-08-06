@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using Rent.Renter.Core.Data;
 using Rent.Renter.Core.Entities;
 
@@ -9,16 +8,15 @@ public class MotorbikeNoSqlRepository : IMotorbikeRepository
 {
     private const string DatabaseName = "rent";
     private const int OffsetId = 1;
-    private readonly ILogger _logger;
-    private readonly IMongoClient _mongoClient;
     private readonly IMongoDatabase _mongoDatabase;
     private readonly IMongoCollection<Motorbike> _motorbikes;
-    public MotorbikeNoSqlRepository(IMongoClient mongoClient, ILogger<MotorbikeNoSqlRepository> logger)
+    private readonly IMongoCollection<Motorbike> _motorbikes2024;
+    
+    public MotorbikeNoSqlRepository(IMongoClient mongoClient)
     {
-        _mongoClient = mongoClient;
-        _logger = logger;
-        _mongoDatabase = _mongoClient.GetDatabase(DatabaseName);
+        _mongoDatabase = mongoClient.GetDatabase(DatabaseName);
         _motorbikes = _mongoDatabase.GetCollection<Motorbike>("motorbikes");
+        _motorbikes2024 = _mongoDatabase.GetCollection<Motorbike>("motorbikes2024");
     }
     
     public async Task<Motorbike?> GetById(Guid id, CancellationToken cancellationToken = default)
@@ -31,6 +29,11 @@ public class MotorbikeNoSqlRepository : IMotorbikeRepository
     public async Task Add(Motorbike motorbike, CancellationToken cancellationToken = default)
     {
         await _motorbikes.InsertOneAsync(motorbike, options: null, cancellationToken);
+    }
+    
+    public async Task AddInto2024Collection(Motorbike motorbike, CancellationToken cancellationToken = default)
+    {
+        await _motorbikes2024.InsertOneAsync(motorbike, options: null, cancellationToken);
     }
 
     public async Task Update(Motorbike motorbike, CancellationToken cancellationToken = default)

@@ -10,10 +10,12 @@ public class GetDeliveryPersonByIdQueryHandler(IDeliveryPersonRepository deliver
 {
     public async Task<Result<DeliveryPersonResponse>> Handle(GetDeliveryPersonByIdQuery query, CancellationToken cancellationToken = default)
     {
+        logger.LogInformation("Retrieving");
         var deliveryPerson = await deliveryPersonRepository.GetById(query.Id, cancellationToken);
         if (deliveryPerson is null)
             return Result.Failure("Delivery Person not found");
         
+        logger.LogInformation("Building response and returning");
         return Result.Success(DeliveryPersonResponse.From(deliveryPerson));
     }
 }

@@ -80,6 +80,26 @@ public class CreateDeliveryPersonCommandValidatorTests
     }
     
     [Theory]
+    [InlineData("0198765432189")]
+    [InlineData("11111111111")]
+    [InlineData("12345678901")]
+    [InlineData("ABCDEFGHIJK")]
+    [InlineData("ABCDEF43210")]
+    [InlineData("01987")]
+    public void Validate_ShouldBeInvalid_WhenDriverLicenseNumberIsNotValid(string driverLicenseNumber)
+    {
+        var sample = _createDeliveryPersonCommandSample with { DriverLicenseNumber = driverLicenseNumber };
+        var expectedErrorCount = 1;
+        var expectedErrorMessage = "Driver License Number isn't valid";
+        
+        var result = _validator.Validate(sample);
+        
+        Assert.False(result.IsValid);
+        Assert.Equal(expectedErrorCount, result.Errors.Count);
+        Assert.Equal(expectedErrorMessage, result.Errors.FirstOrDefault()?.ErrorMessage);
+    }
+    
+    [Theory]
     [InlineData("    ")]
     [InlineData(" ")]
     [InlineData(null)]

@@ -10,10 +10,12 @@ public class GetRentalTotalizationQueryHandler(IRentalRepository rentalRepositor
 {
     public async Task<Result<RentalPriceTotalization>> Handle(GetRentalTotalizationQuery query, CancellationToken cancellationToken = default)
     {
+        logger.LogInformation("Retrieving");
         var rental = await rentalRepository.GetById(query.Id, cancellationToken);
         if (rental is null)
             return Result.Failure("Rental not found");
-
+        
+        logger.LogInformation("Building totalization and returning");
         var returnDate = query.ReturnDate ?? (rental.EffectiveEndDateUtc ?? rental.EstimatedEndDateUtc);
         return Result.Success(rental.GetTotalization(returnDate));
     }
