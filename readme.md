@@ -89,12 +89,21 @@ Resultado
 
 Após isto, o worker **Rent.Renter.MotorbikeUpdatesMonitor.Consumer** estará em funcionamento. Pronto para replicar as motos do contexto de **Backoffice** para o contexto **Rent**
 
+**OBSERVAÇÃO:** Se preferir usar o **Visual Studio** para rodar o projeto, vá nas propriedades da solução e configure para executar as três aplicações ao mesmo tempo, conforme imagem a seguir
+
+![alt text](image.png)
+
+Em seguida execute a aplicação. Você perceberá alguns consoles e navegadores abrindo
+
+![alt text](image-1.png)
+
 
 ## 📚 Arquitetura
 A arquitetura foi dividida em dois contextos, Backoffice (onde os administradores conseguem cadastrar motos) e Renter (onde os entregadores conseguem alugá-las).
 
 - O contexto de **Backoffice** possui apenas uma API simples com operações crud para motos.
 - O contexto **Renter** possui uma aplicação do tipo "Worker" que consome eventos emitidos pelo **Backoffice.Api** e replica os dados no MongoDB, além de possuir uma API que permite o cadsatro de entregadores e o aluguel das motos
+- Essa decisão de design foi adotada para as aplicações de backoffice e de aluguel possam crescer e escalar separadamente, podendo inclusive evoluir para um cenário de microsserviços
 
 ![alt text](arquitetura.jpg)
 
