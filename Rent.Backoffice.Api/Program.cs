@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Rent.Backoffice.Infra.DependencyInjection;
 using Rent.Shared.Library.Extensions;
 using Rent.Shared.Library.Messaging;
+using Rent.Shared.Library.Middlewares;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSerilog(cfg => cfg.ReadFrom.Configuration(builder.Configuration));
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 builder.Services.AddControllers().AddJsonOptions(o => o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.Configure<JsonOptions>(o => o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.ConfigureBackofficeModule(builder.Configuration);
@@ -28,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseExceptionHandler();
 app.UseHttpsRedirection();
 app.MapControllers();
 
