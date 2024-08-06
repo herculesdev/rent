@@ -107,6 +107,15 @@ A arquitetura foi dividida em dois contextos, Backoffice (onde os administradore
 
 ![alt text](arquitetura.jpg)
 
+## 📚 Arquitetura interna do projeto
+A arquitetura interna adotada busca aumentar a coesão e reduzir as indireções, apesar disso enta também manter certo nível de desacoplamento, já que não é possível ter os dois ao mesmo tempo. Segue algumas observações importantes:
+- Evitei abstrações desnecessárias, principalmente para bibliotecas que hoje são padrões no desenvolvimento .NET
+- Conforme a síntese acima, tentei reduzir as indireções evitando excesso de camadas, mas se fosse necessário, poderia ter N camadadas (Anticorrupção, Application, CrossCuting e etc..)
+- A camada de domain é o centro, as dependências são invertidas e tudo depende dela, não o contrário.
+
+**ATENÇÃO:** As setas no diagrama abaixo não indica dependência entre as camadas, mas sim o fluxo natural da informação ou de ordem de acionamento dos serviços.
+![alt text](image-2.png)
+
 ## 🛠️ Construído com
 Ferramentas/tecnologias utilizadas para construção deste projeto
 
